@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solutions WaterMinds</title>
+  <meta name="description" content="Solutions WaterMinds – Innovative, sustainable, industry‑compliant technology solutions. Consulting, integration, optimization, and the Future Minds training program."/>
+  <style>
+    :root{
+      --bg:#0e1525;
+      --panel:#101a2e;
+      --muted:#b8c2d8;
+      --text:#e9eefb;
+      --brand:#3dd9d6;
+      --brand-2:#5b8cff;
+      --accent:#ffd166;
+      --danger:#ff6b6b;
+      --ring: 0 0 0 3px rgba(61,217,214,.25);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text); background: radial-gradient(1200px 800px at 10% -10%, #1b2540 0%, transparent 50%),
+                         radial-gradient(1000px 700px at 110% -20%, #17213a 0%, transparent 60%),
+                         var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92%); margin-inline:auto}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background:rgba(14,21,37,.75); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    .logo-dot{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 6px 16px rgba(91,140,255,.35)}
+    .navlinks{display:flex; gap:26px; align-items:center}
+    .navlinks a{opacity:.9}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:12px; font-weight:600; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand-2),var(--brand)); border:none}
+    .btn.ghost{background:transparent; border:1px solid rgba(255,255,255,.12)}
+    .menu{display:none}
+
+    /* Hero */
+    .hero{padding:80px 0 50px; position:relative; overflow:hidden}
+    .grid{display:grid; grid-template-columns: 1.15fr .85fr; gap:36px; align-items:center}
+    .hero h1{font-size: clamp(32px, 4vw, 48px); line-height:1.15; margin:0 0 10px}
+    .hero p{color:var(--muted); margin:0 0 24px; font-size:clamp(16px, 1.4vw, 18px)}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); padding:22px; border-radius:var(--radius); box-shadow:var(--shadow); min-height:240px}
+    .tag{display:inline-flex; gap:8px; align-items:center; font-size:13px; color:var(--muted); border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; margin-bottom:10px}
+
+    /* Section */
+    section{padding:64px 0}
+    h2{font-size: clamp(26px, 3vw, 36px); margin:0 0 8px}
+    .sub{color:var(--muted); margin-bottom:28px}
+
+    /* Cards grid */
+    .cards{display:grid; grid-template-columns: repeat(12, 1fr); gap:18px}
+    .card{grid-column: span 6; background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:20px; box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px}
+    .card p{margin:0; color:var(--muted)}
+
+    /* Services */
+    .service{grid-column: span 3}
+
+    /* Highlight */
+    .highlight{background:linear-gradient(180deg, rgba(91,140,255,.10), rgba(61,217,214,.10)); border:1px solid rgba(255,255,255,.10); border-radius:20px; padding:22px}
+    .bullets{display:grid; gap:10px; margin:16px 0 22px}
+    .bullet{display:flex; gap:10px; align-items:flex-start}
+    .bullet svg{flex:0 0 auto}
+
+    /* Why choose us */
+    .features{display:grid; grid-template-columns: repeat(4, 1fr); gap:18px}
+    .feature{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px; text-align:center}
+
+    /* Blog */
+    .blog{display:grid; grid-template-columns: repeat(2, 1fr); gap:18px}
+    .post{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px}
+
+    /* CTA */
+    .cta{background:linear-gradient(135deg, rgba(61,217,214,.15), rgba(91,140,255,.18)); border:1px solid rgba(255,255,255,.15); border-radius:22px; padding:26px; text-align:center}
+
+    /* Footer */
+    footer{padding:30px 0 50px; color:var(--muted)}
+    .foot{display:grid; grid-template-columns: 1fr auto; gap:16px; align-items:center; border-top:1px solid rgba(255,255,255,.08); padding-top:24px}
+
+    /* Contact */
+    form{display:grid; gap:12px}
+    input, textarea{width:100%; background:#0b1220; border:1px solid rgba(255,255,255,.12); color:var(--text); padding:12px 14px; border-radius:12px; outline:none}
+    input:focus, textarea:focus{box-shadow:var(--ring); border-color:transparent}
+
+    /* Responsive */
+    @media (max-width: 1000px){
+      .grid{grid-template-columns:1fr}
+      .service{grid-column: span 6}
+      .features{grid-template-columns: repeat(2, 1fr)}
+      .blog{grid-template-columns: 1fr}
+    }
+    @media (max-width: 720px){
+      .navlinks{display:none}
+      .menu{display:inline-flex}
+      .card, .service{grid-column: span 12}
+      .features{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-dot" aria-hidden="true"></div>
+        <span>Solutions <strong>WaterMinds</strong></span>
+      </div>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#future-minds">Future Minds</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a class="btn ghost" href="#contact">Get in Touch</a>
+      </nav>
+      <button class="menu btn ghost" aria-label="Open menu" onclick="toggleMenu()">Menu</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" hidden style="position:fixed; inset:60px 12px auto; background:var(--panel); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:14px; z-index:60; box-shadow:var(--shadow)">
+    <a class="btn" style="display:block; margin:6px 0" href="#home" onclick="toggleMenu(true)">Home</a>
+    <a class="btn" style="display:block; margin:6px 0" href="#about" onclick="toggleMenu(true)">About</a>
+    <a class="btn" style="display:block; margin:6px 0" href="#services" onclick="toggleMenu(true)">Services</a>
+    <a class="btn" style="display:block; margin:6px 0" href="#future-minds" onclick="toggleMenu(true)">Future Minds</a>
+    <a class="btn" style="display:block; margin:6px 0" href="#blog" onclick="toggleMenu(true)">Blog</a>
+    <a class="btn primary" style="display:block; margin:6px 0" href="#contact" onclick="toggleMenu(true)">Get in Touch</a>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container grid">
+      <div>
+        <span class="tag">Innovative • Sustainable • Compliant</span>
+        <h1>Innovative, Sustainable, and Industry‑Compliant Solutions for Tomorrow’s Businesses</h1>
+        <p>At <strong>Solutions WaterMinds</strong>, we help organizations thrive through technology integration, standards compliance, and innovation. Partner with us to design scalable systems, optimize operations, and upskill teams.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn primary" href="#services">Explore Our Services</a>
+          <a class="btn ghost" href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Decorative graphic placeholder">
+        <!-- Placeholder graphic -->
+        <svg width="100%" height="210" viewBox="0 0 600 210" role="img" aria-label="Abstract graphic">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0%" stop-color="#5b8cff"/>
+              <stop offset="100%" stop-color="#3dd9d6"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="600" height="210" rx="18" fill="url(#g)" opacity="0.15"/>
+          <circle cx="120" cy="105" r="60" fill="url(#g)" opacity=".45"/>
+          <rect x="220" y="60" width="230" height="90" rx="12" fill="url(#g)" opacity=".45"/>
+          <circle cx="500" cy="105" r="40" fill="url(#g)" opacity=".45"/>
+        </svg>
+        <p class="sub">ISO 14001 • NVQ Competency • Solution Architecture • Interactive Education Programs For Inventors</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p class="sub">Solutions WaterMinds is a Sri Lankan consulting and training firm specializing in solution architecture, technology integration, systems optimization, and innovation education. We align with national and international standards such as NVQ Competency and ISO 14001 to deliver trusted, future‑ready solutions.</p>
+      <div class="cards">
+        <div class="card"><h3>Vision</h3><p>To be Sri Lanka’s most trusted partner for innovative, sustainable, and industry‑compliant technology solutions.</p></div>
+        <div class="card"><h3>Mission</h3><p>We deliver customized, scalable, and efficient solutions that solve real business challenges and enhance operational performance and growth.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2>Our Core Services</h2>
+      <p class="sub">From architecture to training, we help you modernize and excel.</p>
+      <div class="cards">
+        <div class="card service">
+          <h3>Solution Architecture Consulting</h3>
+          <p>Tailored systems to enhance efficiency, scalability, and innovation while aligning with your goals.</p>
+        </div>
+        <div class="card service">
+          <h3>Technology Integration</h3>
+          <p>Seamless adoption of the latest tools with minimal disruption to operations.</p>
+        </div>
+        <div class="card service">
+          <h3>Systems Optimization</h3>
+          <p>Evaluate and tune performance, security, and reliability of existing systems.</p>
+        </div>
+        <div class="card service">
+          <h3>Training & Development</h3>
+          <p>Specialized NVQ/ISO‑aligned training to upskill your workforce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Minds Highlight -->
+  <section id="future-minds">
+    <div class="container">
+      <div class="highlight">
+        <h2>Future Minds: NextGen Design Lab</h2>
+        <p class="sub">A flagship Solutions WaterMinds program that equips young learners with creativity, design thinking, and 3D modeling skills to become tomorrow’s innovators.</p>
+        <div class="bullets">
+          <div class="bullet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"/></svg>
+            <div>Introduces innovation & design thinking (Grades 9–13 and school leavers).</div>
+          </div>
+          <div class="bullet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 8h8M8 12h6"/></svg>
+            <div>Hands‑on with SolidWorks 2019 and solid modeling techniques.</div>
+          </div>
+          <div class="bullet">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10v10H7z"/></svg>
+            <div>Students design a product idea, present, and learn IP basics.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn primary" href="#contact">Enroll Your School</a>
+          <a class="btn ghost" href="#modules">View Modules</a>
+        </div>
+      </div>
+
+      <!-- Modules sub‑section -->
+      <div id="modules" style="margin-top:26px">
+        <div class="cards">
+          <div class="card"><h3>1) Creativity & Innovation Basics · 2h</h3><p>What is creativity? Pathways to invention, case studies, and the inventor log book.</p></div>
+          <div class="card"><h3>2) Design Thinking for Students · 2h</h3><p>Problem identification, brainstorming, rapid prototyping.</p></div>
+          <div class="card"><h3>3) Intro to SolidWorks 2019 · 3h</h3><p>Installation, interface overview, basic shapes.</p></div>
+          <div class="card"><h3>4) Solid Modeling Techniques · 4h</h3><p>Sketching, extrude, revolve, patterns, assemblies.</p></div>
+          <div class="card"><h3>5) Designing an Invention · 4h</h3><p>Each student proposes and models a product idea.</p></div>
+          <div class="card"><h3>6) Final Presentation & IP · 2h</h3><p>Project showcase, peer feedback, intellectual property concepts.</p></div>
+        </div>
+        <p class="sub" style="margin-top:14px">Total program duration: <strong>17 hours (2 days)</strong>. Initial pilot: 10 programs in Gampaha & nearby regions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section>
+    <div class="container">
+      <h2>Why Partner with Solutions WaterMinds?</h2>
+      <div class="features">
+        <div class="feature"><h3>Innovation</h3><p>Future‑ready solutions that push boundaries.</p></div>
+        <div class="feature"><h3>Collaboration</h3><p>We co‑create with clients for tailored outcomes.</p></div>
+        <div class="feature"><h3>Integrity</h3><p>Aligned to regulations and your business goals.</p></div>
+        <div class="feature"><h3>Excellence</h3><p>Top‑quality delivery—every project, big or small.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog / Insights -->
+  <section id="blog">
+    <div class="container">
+      <h2>Latest Insights</h2>
+      <div class="blog">
+        <article class="post">
+          <h3>How Innovation Education Boosts GDP Growth</h3>
+          <p class="sub">Exploring the link between inventor density and national competitiveness.</p>
+          <a class="btn ghost" href="#">Read Article</a>
+        </article>
+        <article class="post">
+          <h3>The Future of Sustainable Technology in Sri Lanka</h3>
+          <p class="sub">From ISO 14001 to real‑world green solutions for SMEs.</p>
+          <a class="btn ghost" href="#">Read Article</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta">
+        <h2>Ready to Drive Innovation?</h2>
+        <p class="sub">Let’s collaborate to make your organization smarter, sustainable, and future‑ready.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back to you at the email provided.');">
+          <div class="cards" style="gap:12px">
+            <div class="card" style="grid-column: span 6">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="card" style="grid-column: span 6">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="card" style="grid-column: span 12">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs…"></textarea>
+            </div>
+          </div>
+          <div style="margin-top:12px"><button class="btn primary" type="submit">Send Message</button></div>
+        </form>
+        <p class="sub" style="margin-top:12px">Email: <a href="mailto:cpg810@gmail.com">cpg810@gmail.com</a> · Phone: <a href="tel:+94777181928">+94 777 181 928</a> / <a href="tel:+94716287419">+94 716 287 419</a><br/>Address: No 35/75, Dahamigama Mawatha, Palupelpita, Radawana. <br/> ORCID: <a href="https://orcid.org/0009-0002-7521-9683" target="_blank">https://orcid.org/0009-0002-7521-9683</a>
+        </p>
+        <div style="text-align:center; margin-top:15px;">
+  <img src="images/logo1.png" alt="logo1" width="100" style="margin-right:30px;">
+  <img src="images/logo2.png" alt="logo2" width="100">
+</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> Solutions WaterMinds · All rights reserved</div>
+      <div style="display:flex; gap:14px"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#future-minds">Future Minds</a><a href="#contact">Contact</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu(forceClose){
+      const el = document.getElementById('mobileMenu');
+      el.hidden = forceClose ? true : !el.hidden;
+    }
+    // Smooth scroll for same‑page anchors
+    document.addEventListener('click', (e)=>{
+      const a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      const id = a.getAttribute('href');
+      if(id.length > 1){
+        const target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
+        }
+      }
+    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
