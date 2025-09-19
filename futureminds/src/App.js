@@ -13,13 +13,16 @@ function App() {
       {/* Header */}
       <header>
         <div className="container header-container">
-          <div className="logo">
-            <img src={`${process.env.PUBLIC_URL}/images/logo1.png`} alt="Logo 1" className="header-logo" />
-            <img src={`${process.env.PUBLIC_URL}/images/logo2.png`} alt="Logo 2" className="header-logo" />
-            <span className="company-name">Solutions WaterMinds</span>
-          </div>
-          <div className="contact-info">
-            <span>Email: cpg810@gmail.com</span> · <span>Phone: +94 777 181 928 / +94 716 287 419</span>
+          <div className="header-content">
+            <div className="logo">
+              <img src={`${process.env.PUBLIC_URL}/images/logo1.png`} alt="Logo 1" className="header-logo" />
+              <img src={`${process.env.PUBLIC_URL}/images/logo2.png`} alt="Logo 2" className="header-logo" />
+              <span className="company-name">Solutions WaterMinds</span>
+            </div>
+            <div className="contact-info">
+              <span>Email: cpg810@gmail.com</span> · 
+              <span>Phone: +94 777 181 928 / +94 716 287 419</span>
+            </div>
           </div>
         </div>
       </header>
@@ -29,7 +32,7 @@ function App() {
         <div className="container">
           <h1>Creative • Innovative • Sustainable • Climate Compliant</h1>
           <p>Creative, Innovative, Sustainable, and Climate‑Compliant Solutions for Future Minds, blooming with creativity</p>
-          <p>At Solutions WaterMinds, we help organizations to build up community driven creativity and thrive through technology integration, standards compliance, inventions and innovation. Partner with us to design scalable systems, optimize operations, and upskill teams.</p>
+          <p>At Solutions WaterMinds, we help organizations build community-driven creativity and thrive through technology integration, standards compliance, inventions, and innovation. Partner with us to design scalable systems, optimize operations, and upskill teams.</p>
         </div>
       </section>
 
@@ -38,7 +41,7 @@ function App() {
         <div className="container">
           <h2>My Passion</h2>
           <p>
-            I am deeply passionate about creativity, invention, innovation, and education. I strive to empower young learners and professionals to develop solutions that are both sustainable and inline with the Technology Readiness Levels. Through hands-on projects, technology integration, and mentorship, I aim to create a future-ready generation of problem-solvers.
+            I am deeply passionate about creativity, invention, innovation, and education. I strive to empower young learners and professionals to develop solutions that are both sustainable and aligned with Technology Readiness Levels. Through hands-on projects, technology integration, and mentorship, I aim to create a future-ready generation of problem-solvers.
           </p>
           <p>Young Imaginations Shape The Future</p>
         </div>
@@ -48,7 +51,7 @@ function App() {
       <section id="who-we-are" data-aos="fade-up">
         <div className="container">
           <h2>Who We Are</h2>
-          <p>Solutions WaterMinds is a Sri Lankan consulting and training firm specializing in solution architecture, technology integration, systems optimization, and innovation education. We align with national and international standards such as NVQ Competency and ISO 14001 to deliver trusted, future‑ready solutions.</p>
+          <p>Solutions WaterMinds is a Sri Lankan consulting and training firm specializing in solution architecture, technology integration, systems optimization, and innovation education. We align with national and international standards such as NVQ Competency and ISO 14001 to deliver trusted, future-ready solutions.</p>
         </div>
       </section>
 
@@ -56,7 +59,7 @@ function App() {
       <section id="vision-mission" data-aos="fade-up">
         <div className="container">
           <h2>Vision</h2>
-          <p>To be Sri Lanka’s most trusted partner for creative, innovative, sustainable, and industry‑compliant technology solutions.</p>
+          <p>To be Sri Lanka’s most trusted partner for creative, innovative, sustainable, and industry-compliant technology solutions.</p>
           <h2>Mission</h2>
           <p>We deliver customized, scalable, and efficient solutions that solve real business challenges and enhance operational performance and growth.</p>
         </div>
@@ -81,7 +84,7 @@ function App() {
             </div>
             <div className="card">
               <h3>Training & Development</h3>
-              <p>Specialized NVQ/ISO-aligned training to upskill your workforce and build up community driven creative working community in Sri Lanka.</p>
+              <p>Specialized NVQ/ISO-aligned training to upskill your workforce and build a community-driven creative working environment in Sri Lanka.</p>
             </div>
           </div>
         </div>
@@ -104,7 +107,7 @@ function App() {
       {/* Company Brochure */}
       <section id="brochure" data-aos="fade-up">
         <div className="container">
-          <a href={`${process.env.PUBLIC_URL}/images/brochure.pdf`} target="_blank" rel="noreferrer">
+          <a href={`${process.env.PUBLIC_URL}/images/brochure.pdf`} download target="_blank" rel="noreferrer">
             Company Brochure
           </a>
         </div>
