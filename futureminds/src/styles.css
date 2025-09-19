@@ -1,0 +1,250 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+body {
+  background-color: #0a1f44; /* Dark blue background */
+  line-height: 1.6;
+  perspective: 1px; /* Enable parallax effect */
+  perspective-origin: 0 0;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  background-color: #1450a3; /* Slightly lighter blue */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+}
+
+.contact-info {
+  font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px 60px 20px;
+}
+
+.hero-text {
+  transform: translateZ(-0.2px) scale(1.05); /* Subtle parallax */
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #e0e0e0;
+}
+
+/* My Passion Section */
+#passion {
+  text-align: center;
+}
+
+#passion h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#passion p {
+  max-width: 700px;
+  margin: 0 auto 10px auto;
+  color: #d0d0d0;
+}
+
+/* Who We Are Section */
+#who-we-are {
+  text-align: center;
+}
+
+#who-we-are h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#who-we-are p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #d0d0d0;
+}
+
+/* Vision & Mission */
+#vision-mission {
+  text-align: center;
+}
+
+#vision-mission h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+#vision-mission p {
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  color: #d0d0d0;
+}
+
+/* Core Services */
+#services {
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #1a2d5a;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+/* Future Minds */
+#future-minds {
+  text-align: center;
+}
+
+#future-minds h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#future-minds p {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  color: #d0d0d0;
+}
+
+.bullets {
+  list-style-type: disc;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 20px;
+  text-align: left;
+  color: #e0e0e0;
+}
+
+/* Company Brochure */
+#brochure {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#brochure a {
+  color: #ffd700;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#contact p, #contact a {
+  color: #d0d0d0;
+}
+
+/* Footer */
+footer {
+  background-color: #1450a3;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Parallax effect helper for sections */
+section {
+  transform-style: preserve-3d;
+  position: relative;
+  padding: 60px 20px;
+  z-index: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
