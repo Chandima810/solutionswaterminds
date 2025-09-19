@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/solutionswaterminds/static/css/main.e078a168.css",
-    "main.js": "/solutionswaterminds/static/js/main.9efe0b7c.js",
+    "main.js": "/solutionswaterminds/static/js/main.c7e38308.js",
     "index.html": "/solutionswaterminds/index.html",
     "main.e078a168.css.map": "/solutionswaterminds/static/css/main.e078a168.css.map",
-    "main.9efe0b7c.js.map": "/solutionswaterminds/static/js/main.9efe0b7c.js.map"
+    "main.c7e38308.js.map": "/solutionswaterminds/static/js/main.c7e38308.js.map"
   },
   "entrypoints": [
     "static/css/main.e078a168.css",
-    "static/js/main.9efe0b7c.js"
+    "static/js/main.c7e38308.js"
   ]
 }
