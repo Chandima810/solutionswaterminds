@@ -1,206 +1,129 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./styles.css";
 
+// Import assets
+import logo from "./assets/logo.png";
+import future from "./assets/future.png";
+import standards from "./assets/standards.png";
+import innovation from "./assets/innovation.png";
+import contact from "./assets/contact.png";
+import brochure from "./assets/brochure.pdf";
+
 function App() {
-  const sectionsRef = useRef([]);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    // Initialize AOS
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1200 });
 
-    // Scroll-based gradient parallax effect
-    const handleScroll = () => {
-      sectionsRef.current.forEach((section) => {
-        if (section) {
-          const offset = window.scrollY * 0.2; // adjust speed factor
-          section.style.backgroundPosition = `center ${-offset}px`;
-        }
-      });
-    };
-
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const addToRefs = (el) => {
-    if (el && !sectionsRef.current.includes(el)) {
-      sectionsRef.current.push(el);
-    }
+  // Parallax background effect
+  const parallaxStyle = {
+    backgroundPositionY: `${scrollY * 0.4}px`,
   };
 
   return (
     <div>
       {/* Header */}
       <header>
-        <div className="container header-container">
+        <div className="header-container">
           <div className="logo">
-            <img
-              src={`${process.env.PUBLIC_URL}/images/logo1.png`}
-              alt="Logo 1"
-              className="header-logo"
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/images/logo2.png`}
-              alt="Logo 2"
-              className="header-logo"
-            />
-            <span className="company-name">Solutions WaterMinds</span>
+            <img src={logo} alt="Company Logo" className="header-logo" />
+            <span className="company-name">Neat Solutions</span>
           </div>
           <div className="contact-info">
-            <span>Email: cpg810@gmail.com</span> ·{" "}
-            <span>Phone: +94 777 181 928 / +94 716 287 419</span>
+            <p>Email: info@neatsolutions.com | Phone: +94 77 123 4567</p>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="hero" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h1>Creative • Innovative • Sustainable • Climate Compliant</h1>
+      <section className="hero" style={parallaxStyle}>
+        <div data-aos="fade-up">
+          <h1>Welcome to Neat Solutions</h1>
           <p>
-            Creative, Innovative, Sustainable, and Climate‑Compliant Solutions
-            for Future Minds, blooming with creativity
-          </p>
-          <p>
-            At Solutions WaterMinds, we help organizations to build up community
-            driven creativity and thrive through technology integration, standards
-            compliance, inventions and innovation. Partner with us to design scalable
-            systems, optimize operations, and upskill teams.
+            Empowering communities through innovation, resilience, and
+            sustainable solutions.
           </p>
         </div>
       </section>
 
-      {/* My Passion Section */}
-      <section id="passion" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h2>My Passion</h2>
+      {/* Future Vision Section */}
+      <section className="gradient-section-1">
+        <div className="container" data-aos="fade-up">
+          <h2>
+            <img src={future} alt="Future Icon" className="header-logo" /> Our
+            Vision for the Future
+          </h2>
           <p>
-            I am deeply passionate about creativity, invention, innovation, and
-            education. I strive to empower young learners and professionals to
-            develop solutions that are both sustainable and inline with the Technology
-            Readiness Levels. Through hands-on projects, technology integration, and
-            mentorship, I aim to create a future-ready generation of problem-solvers.
-          </p>
-          <p>Young Imaginations Shape The Future</p>
-        </div>
-      </section>
-
-      {/* Who We Are */}
-      <section id="who-we-are" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h2>Who We Are</h2>
-          <p>
-            Solutions WaterMinds is a Sri Lankan consulting and training firm specializing
-            in solution architecture, technology integration, systems optimization,
-            and innovation education. We align with national and international standards
-            such as NVQ Competency and ISO 14001 to deliver trusted, future‑ready solutions.
+            We are committed to building adaptive, climate-responsive, and
+            community-driven innovations for tomorrow.
           </p>
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <section id="vision-mission" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h2>Vision</h2>
+      {/* Standards Section */}
+      <section className="gradient-section-2">
+        <div className="container" data-aos="fade-up">
+          <h2>
+            <img src={standards} alt="Standards Icon" className="header-logo" />{" "}
+            Global Standards
+          </h2>
           <p>
-            To be Sri Lanka’s most trusted partner for creative, innovative, sustainable,
-            and industry‑compliant technology solutions.
-          </p>
-          <h2>Mission</h2>
-          <p>
-            We deliver customized, scalable, and efficient solutions that solve real business
-            challenges and enhance operational performance and growth.
+            Our solutions align with international frameworks, ensuring
+            excellence and reliability.
           </p>
         </div>
       </section>
 
-      {/* Core Services */}
-      <section id="services" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h2>Our Core Services</h2>
-          <div className="cards">
-            <div className="card">
-              <h3>Solution Architecture Consulting</h3>
-              <p>
-                Tailored systems to enhance efficiency, scalability, and innovation
-                while aligning with your goals.
-              </p>
-            </div>
-            <div className="card">
-              <h3>Technology Integration</h3>
-              <p>Seamless adoption of the latest tools with minimal disruption to operations.</p>
-            </div>
-            <div className="card">
-              <h3>Systems Optimization</h3>
-              <p>Evaluate and tune performance, security, and reliability of existing systems.</p>
-            </div>
-            <div className="card">
-              <h3>Training & Development</h3>
-              <p>
-                Specialized NVQ/ISO-aligned training to upskill your workforce and
-                build up community driven creative working community in Sri Lanka.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Future Minds */}
-      <section id="future-minds" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h2>Future Minds: NextGen Design Lab</h2>
-          <h3>Young Imaginations Shape The Future</h3>
+      {/* Innovation Section */}
+      <section className="gradient-section-1">
+        <div className="container" data-aos="fade-up">
+          <h2>
+            <img
+              src={innovation}
+              alt="Innovation Icon"
+              className="header-logo"
+            />{" "}
+            Innovation at the Core
+          </h2>
           <p>
-            A flagship Solutions WaterMinds program that equips young learners
-            with creativity, design thinking, and 3D modeling skills to become
-            tomorrow’s innovators.
+            We harness the latest technologies to create scalable, impactful,
+            and sustainable solutions.
           </p>
-          <ul className="bullets">
-            <li>Introduces creativity concepts, innovation & design thinking (Grades 9–13 and school leavers).</li>
-            <li>Hands-on with SolidWorks 2019 and solid modeling techniques.</li>
-            <li>Students design a product idea, present, and learn IP basics.</li>
-          </ul>
         </div>
       </section>
 
-      {/* Company Brochure */}
-      <section id="brochure" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <a
-            href={`${process.env.PUBLIC_URL}/images/brochure.pdf`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Company Brochure
+      {/* Brochure Section */}
+      <section id="brochure" className="gradient-section-2">
+        <div className="container" data-aos="fade-up">
+          <h2>Download Our Brochure</h2>
+          <a href={brochure} download="NeatSolutions-Brochure.pdf">
+            📄 Download Brochure
           </a>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h2>Contact Us</h2>
-          <p>Address: No 35/75, Dahamigama Mawatha, Palupelpita, Radawana</p>
-          <p>
-            ORCID:{" "}
-            <a
-              href="https://orcid.org/0009-0002-7521-9683"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://orcid.org/0009-0002-7521-9683
-            </a>
-          </p>
+      {/* Contact Section */}
+      <section className="gradient-section-1">
+        <div className="container" data-aos="fade-up">
+          <h2>
+            <img src={contact} alt="Contact Icon" className="header-logo" />{" "}
+            Get in Touch
+          </h2>
+          <p>Email us at info@neatsolutions.com or call +94 77 123 4567</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer data-aos="fade-up">
-        <div className="container">
-          <p>© 2025 Solutions WaterMinds. All rights reserved.</p>
-        </div>
+      <footer>
+        <p>© {new Date().getFullYear()} Neat Solutions. All Rights Reserved.</p>
       </footer>
     </div>
   );
