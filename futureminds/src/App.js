@@ -27,8 +27,8 @@ function App() {
       {/* Hero Section */}
       <section className="hero" data-aos="fade-up">
         <div className="container">
-          <h1>Innovative • Sustainable • Compliant</h1>
-          <p>Innovative, Sustainable, and Industry‑Compliant Solutions for Future Minds, blooming with creativity</p>
+          <h1>Creative • Innovative • Sustainable • Climate Compliant</h1>
+          <p>Creative, Innovative, Sustainable, and Climate Climate‑Compliant Solutions for Future Minds, blooming with creativity</p>
           <p>At Solutions WaterMinds, we help organizations to build up community driven creativity and thrive through technology integration, standards compliance, inventions and innovation. Partner with us to design scalable systems, optimize operations, and upskill teams.</p>
         </div>
       </section>
