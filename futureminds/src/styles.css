@@ -1,155 +1,105 @@
-/* General Reset */
+/* Reset some default styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
 }
 
 body {
-  background-color: #0a1f44; /* Dark blue background */
+  font-family: Arial, sans-serif;
+  background-color: #0d1b3d; /* dark blue body */
+  color: #ffffff;
   line-height: 1.6;
-  perspective: 1px; /* Enable parallax effect */
-  perspective-origin: 0 0;
-  overflow-x: hidden;
 }
 
 /* Header */
 header {
-  background-color: #1450a3; /* Slightly lighter blue */
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background-color: #1a2a55; /* slightly lighter than body */
+  padding: 15px 20px;
 }
 
 .header-container {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.5rem;
-  font-weight: bold;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .header-logo {
-  height: 40px;
-  width: auto;
+  width: 60px;
+  height: auto;
+}
+
+.company-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .contact-info {
+  margin-top: 5px;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 /* Hero Section */
 .hero {
+  padding: 40px 20px;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding: 80px 20px 60px 20px;
-}
-
-.hero-text {
-  transform: translateZ(-0.2px) scale(1.05); /* Subtle parallax */
-  display: inline-block;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #ffffff;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 800px;
+  margin: 10px auto;
   color: #e0e0e0;
 }
 
-/* My Passion Section */
-#passion {
+/* Sections */
+section {
+  padding: 40px 20px;
   text-align: center;
 }
 
-#passion h2 {
+section h2 {
   font-size: 2rem;
   margin-bottom: 15px;
+  color: #ffffff;
 }
 
-#passion p {
+section p {
   max-width: 700px;
-  margin: 0 auto 10px auto;
-  color: #d0d0d0;
+  margin: 10px auto;
+  color: #dcdcdc;
 }
 
-/* Who We Are Section */
-#who-we-are {
-  text-align: center;
-}
-
-#who-we-are h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-#who-we-are p {
-  max-width: 800px;
-  margin: 0 auto;
-  color: #d0d0d0;
-}
-
-/* Vision & Mission */
-#vision-mission {
-  text-align: center;
-}
-
-#vision-mission h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-#vision-mission p {
-  max-width: 800px;
-  margin: 0 auto 15px auto;
-  color: #d0d0d0;
-}
-
-/* Core Services */
-#services {
-  text-align: center;
-}
-
-#services h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
+/* Cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .card {
-  background-color: #1a2d5a;
+  background-color: #223366; /* slightly lighter than section background */
   padding: 20px;
   border-radius: 8px;
   width: 250px;
-  text-align: center;
+  text-align: left;
 }
 
 .card h3 {
@@ -161,90 +111,109 @@ header {
   color: #e0e0e0;
 }
 
-/* Future Minds */
-#future-minds {
-  text-align: center;
-}
-
-#future-minds h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-#future-minds p {
-  max-width: 800px;
-  margin: 0 auto 20px auto;
-  color: #d0d0d0;
-}
-
+/* Bulleted lists */
 .bullets {
   list-style-type: disc;
-  max-width: 700px;
-  margin: 0 auto;
   padding-left: 20px;
+  max-width: 700px;
+  margin: 10px auto;
   text-align: left;
-  color: #e0e0e0;
 }
 
-/* Company Brochure */
-#brochure {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
+/* Brochure link */
 #brochure a {
-  color: #ffd700;
-  font-size: 1.2rem;
-  text-decoration: underline;
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #3451a3;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
 
-/* Contact Section */
-#contact {
-  text-align: center;
-}
-
-#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-#contact p, #contact a {
-  color: #d0d0d0;
+#brochure a:hover {
+  background-color: #5672c2;
 }
 
 /* Footer */
 footer {
-  background-color: #1450a3;
+  background-color: #1a2a55; /* match header */
   padding: 20px;
   text-align: center;
+  color: #ccc;
 }
 
-footer p {
-  margin: 0;
-  color: #ffffff;
+/* AOS animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
 }
 
-/* Parallax effect helper for sections */
-section {
-  transform-style: preserve-3d;
-  position: relative;
-  padding: 60px 20px;
-  z-index: 1;
+[data-aos].aos-animate {
+  opacity: 1;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .cards {
     flex-direction: column;
     align-items: center;
   }
 
-  .header-container {
-    flex-direction: column;
-    gap: 10px;
+  .header-logo {
+    width: 50px;
   }
 
-  .logo {
+  .company-name {
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  #brochure a {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section p {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .header-logo {
+    width: 40px;
+  }
+
+  .company-name {
     font-size: 1.3rem;
   }
 }

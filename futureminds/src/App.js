@@ -14,9 +14,9 @@ function App() {
       <header>
         <div className="container header-container">
           <div className="logo">
-            <img src="/images/logo1.png" alt="Logo 1" className="header-logo" />
-            <img src="/images/logo2.png" alt="Logo 2" className="header-logo" />
-            Solutions WaterMinds
+            <img src={`${process.env.PUBLIC_URL}/images/logo1.png`} alt="Logo 1" className="header-logo" />
+            <img src={`${process.env.PUBLIC_URL}/images/logo2.png`} alt="Logo 2" className="header-logo" />
+            <span className="company-name">Solutions WaterMinds</span>
           </div>
           <div className="contact-info">
             <span>Email: cpg810@gmail.com</span> · <span>Phone: +94 777 181 928 / +94 716 287 419</span>
@@ -27,8 +27,8 @@ function App() {
       {/* Hero Section */}
       <section className="hero" data-aos="fade-up">
         <div className="container">
-          <h1>Creative • Innovative • Sustainable • Climate Compliant</h1>
-          <p>Innovative, Sustainable, and Climate‑Compliant Industrial solutions for Future Minds, blooming with creativity</p>
+          <h1>Innovative • Sustainable • Compliant</h1>
+          <p>Innovative, Sustainable, and Industry‑Compliant Solutions for Future Minds, blooming with creativity</p>
           <p>At Solutions WaterMinds, we help organizations to build up community driven creativity and thrive through technology integration, standards compliance, inventions and innovation. Partner with us to design scalable systems, optimize operations, and upskill teams.</p>
         </div>
       </section>
@@ -101,15 +101,12 @@ function App() {
         </div>
       </section>
 
-      {/* Company Brochure Section */}
+      {/* Company Brochure */}
       <section id="brochure" data-aos="fade-up">
         <div className="container">
-          <h2>Company Brochure</h2>
-          <p>
-            <a href="/images/brochure.pdf" target="_blank" rel="noopener noreferrer" className="brochure-link">
-              Download Our Brochure
-            </a>
-          </p>
+          <a href={`${process.env.PUBLIC_URL}/images/brochure.pdf`} target="_blank" rel="noreferrer">
+            Company Brochure
+          </a>
         </div>
       </section>
 
