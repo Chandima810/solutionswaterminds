@@ -73,20 +73,38 @@ function App() {
       </section>
 
       {/* My Passion Section */}
-      <section id="passion" className="overlay-section" ref={addToRefs} data-aos="fade-up">
-        <div className="container">
-          <h2>My Passion</h2>
-          <p>
-            I am deeply passionate about creativity, invention, innovation, and
-            education. I strive to empower young learners and professionals to
-            develop solutions that are both sustainable and inline with the
-            Technology Readiness Levels. Through hands-on projects, technology
-            integration, and mentorship, I aim to create a future-ready
-            generation of problem-solvers.
-          </p>
-          <p>Young Imaginations Shape The Future</p>
-        </div>
-      </section>
+<section id="passion" className="overlay-section" ref={addToRefs} data-aos="fade-up">
+  <div className="container">
+    <h2>My Passion</h2>
+    <p>
+      I am deeply passionate about creativity, invention, innovation, and
+      education. I strive to empower young learners and professionals to
+      develop solutions that are both sustainable and inline with the
+      Technology Readiness Levels. Through hands-on projects, technology
+      integration, and mentorship, I aim to create a future-ready
+      generation of problem-solvers.
+    </p>
+
+    {/* Creativity App Subsection */}
+    <div className="creativity-app">
+      <h3>Creativity App</h3>
+      <p>
+        Explore my interactive creativity platform designed to inspire innovation and learning.  
+        <a
+          href="https://chandima810.github.io/creativity-frontend/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="app-link"
+        >
+          Visit Creativity App →
+        </a>
+      </p>
+    </div>
+
+    <p>Young Imaginations Shape The Future</p>
+  </div>
+</section>
+
 
       {/* Who We Are */}
       <section id="who-we-are" className="overlay-section" ref={addToRefs} data-aos="fade-up">
